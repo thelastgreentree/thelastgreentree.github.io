@@ -1,4 +1,4 @@
-baseURL = "http://thelastgreentree.github.io"
+baseURL = "http://thelastgreentree.bitbucket.io"
 languageCode = "en-us"
 title = "The Last Green Tree"
 theme = "hugo-book"
@@ -13,3 +13,10 @@ resourceDir = "build/resources"
     contentDir = 'content/es'
     languageName = 'Español'
     weight = 20
+
+[params]
+  BookTheme = 'light'
+  BookLogo = 'logo.svg'
+  BookRepo = 'https://github.com/thelastgreentree/thelastgreentree.github.io'
+  BookCommitPath = 'commit'
+  BookEditPath = 'edit/main'
