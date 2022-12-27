@@ -1,0 +1,31 @@
+{{ if .Date }}
+{{- $format := default "January 2, 2006" $.Site.Params.BookDateFormat -}}
+{{- $date := .Date.Format $format -}}
+{{- $lastmod := .Lastmod.Format $format -}}
+{{- if ne $lastmod $date -}}
+{{- $date = printf "Updated: %s" $lastmod | printf "Published: %s. %s" $date -}}
+{{- else -}}
+{{- $date = printf "Published: %s" $date -}}
+{{- end -}}
+<h6>{{ $date }}</h6>
+{{ end }}
+
+{{ range $taxonomy, $_ := .Site.Taxonomies }}
+{{ with $terms := $.GetTerms $taxonomy }}
+<div>
+  {{ range $n, $term := $terms }}{{ if $n }}, {{ end }}
+  <a href="{{ $term.RelPermalink }}">{{ $term.Title }}</a>
+  {{- end }}
+</div>
+{{ end }}
+{{ end }}
+
+{{ if .Params.image }}
+<p>
+  {{ with .Resources.GetMatch .Params.image }}
+  <img src={{ .RelPermalink }} />
+  {{ else }}
+  <img src={{ .Params.image | relURL }} />
+  {{ end }}
+</p>
+{{ end }}
