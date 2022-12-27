@@ -5,14 +5,14 @@
 Clone with submodules:
 
 ```
-$ git clone --recurse-submodules https://github.com/thelastgreentree/web.git
+$ git clone --recurse-submodules https://github.com/thelastgreentree/thelastgreentree.github.io.git
 ```
 
 Alternatively, clone first and then update submodules:
 
 ```
-$ git clone https://github.com/thelastgreentree/web.git
-$ cd web
+$ git clone https://github.com/thelastgreentree/thelastgreentree.github.io.git
+$ cd thelastgreentree.github.io
 $ git submodule update --init --recursive
 ```
 
